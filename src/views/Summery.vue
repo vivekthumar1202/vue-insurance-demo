@@ -11,8 +11,8 @@
           Package: {{ capitalFirstLetter($store.state.data.insuranceType) }}
         </h4>
         <h4>
-          Premium: {{ $store.state.data.finalPremiun }}
-          {{ $store.state.data.country.currency }}
+          Premium: {{ $store.state.data.finalPremiun
+          }}{{ $store.state.data.country.currency }}
         </h4>
         <div class="btn-grp">
           <button type="button" @click="backPage()" class="back-btn">

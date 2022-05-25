@@ -58,8 +58,8 @@
               v-model="data.insuranceType"
             />
             <span
-              >Safe (+{{ data.packagesPremiumSafe }}
-              {{ data.country.currency }}, 50%)</span
+              >Safe (+{{ data.packagesPremiumSafe }}{{ data.country.currency }},
+              50%)</span
             >
           </div>
           <div class="radio-btn">
@@ -71,8 +71,8 @@
               v-model="data.insuranceType"
             />
             <span
-              >Super Safe (+{{ data.packagesPremiumSuper }}
-              {{ data.country.currency }}, 75%)</span
+              >Super Safe (+{{ data.packagesPremiumSuper
+              }}{{ data.country.currency }}, 75%)</span
             >
           </div>
         </div>
