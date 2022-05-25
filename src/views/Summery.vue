@@ -63,7 +63,7 @@ export default class Summery extends Vue {
   }
 
   buyPage() {
-    alert("Thank you for purchased!");
+    alert("You have successfully purchased the insurance.");
     this.$store.dispatch("updateData", {
       name: "",
       age: "",
