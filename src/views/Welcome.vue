@@ -3,7 +3,7 @@
     <div class="box">
       <h1>Hello There!</h1>
       <div class="subtitle-text">
-        Let's buy some insurance.It is going to take only few steps
+        Let's buy some insurance. It is going to take only a few steps
       </div>
       <button @click="nextPage()" class="start-btn">Start</button>
     </div>

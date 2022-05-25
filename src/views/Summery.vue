@@ -2,13 +2,13 @@
   <form>
     <div class="info">
       <div class="box" v-if="$store.state.data.age <= 100">
-        <h1>Summery</h1>
+        <h1>Summary</h1>
         <h2>{{ $store.state.data.name }}</h2>
         <h4>Name: {{ $store.state.data.name }}</h4>
         <h4>Age: {{ $store.state.data.age }}</h4>
         <h4>Where do you live: {{ $store.state.data.country.name }}</h4>
         <h4>Package: {{ $store.state.data.insuranceType }}</h4>
-        <h4>premium: {{ $store.state.data.finalPremiun }}</h4>
+        <h4>Premium: {{ $store.state.data.finalPremiun }}</h4>
         <div class="btn-grp">
           <button type="button" @click="backPage()" class="back-btn">
             Back
@@ -19,7 +19,7 @@
       <div class="box" v-if="$store.state.data.age > 100">
         <h1>Ooops</h1>
         <h5>
-          Your age is over our accepted limit.<br />We are sorry but we can not
+          Your age is over our accepted limit.<br />We are sorry but we cannot
           insure you now
         </h5>
         <button type="button" @click="backPage()" class="ok-btn">Ok :(</button>

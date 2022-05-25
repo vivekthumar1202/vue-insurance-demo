@@ -5,6 +5,7 @@
       <div class="form-control">
         <label>Name</label>
         <input
+          placeholder="Enter Name"
           v-bind:class="{ error: !data.name && isFormSubmitted }"
           type="text"
           v-model="data.name"
@@ -15,6 +16,7 @@
       <div class="form-control">
         <label>Age</label>
         <input
+          placeholder="Enter Age"
           v-bind:class="{ error: !data.age && isFormSubmitted }"
           type="number"
           v-model="data.age"
