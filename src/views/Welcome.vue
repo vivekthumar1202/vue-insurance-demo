@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="welcome-home">
     <div class="box">
       <h1>Hello There!</h1>
       <div class="subtitle-text">
@@ -21,38 +21,6 @@ export default class WelcomeView extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
-.home {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-  .box {
-    background-color: #8080801a;
-    width: 560px;
-    display: flex;
-    height: 280px;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    gap: 20px;
-
-    h1 {
-      margin-bottom: 0;
-    }
-    .subtitle-text {
-      font-size: 14px;
-      font-weight: normal;
-    }
-    .start-btn {
-      width: 134px;
-      height: 36px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      outline: none;
-      background: black;
-      color: white;
-    }
-  }
-}
+<style scoped>
+@import "./Welcome.css";
 </style>

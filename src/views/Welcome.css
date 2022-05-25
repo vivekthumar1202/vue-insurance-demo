@@ -1,0 +1,36 @@
+.welcome-home {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;    
+}
+
+.welcome-home .box {
+    background-color: #8080801a;
+    width: 560px;
+    display: flex;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.welcome-home .boxh1 {
+    margin-bottom: 0;
+}
+
+.welcome-home .box .subtitle-text {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.welcome-home .box .start-btn {
+    width: 134px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    background: black;
+    color: white;
+  }

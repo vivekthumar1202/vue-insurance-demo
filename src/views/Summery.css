@@ -1,0 +1,65 @@
+.summery-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;   
+}
+
+.summery-info h1 {
+    margin-bottom: 0px;
+}
+
+.summery-info  h4, h5 {
+    margin: 0px;
+    font-weight: normal;
+}
+
+.summery-info .box {
+    margin-top: 30px;
+    background-color: #8080801a;
+    width: 560px;
+    display: flex;
+    height: max-content;
+    padding: 30px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 20px;
+}
+
+
+.summery-info .box .btn-grp {
+    display: flex;
+    gap: 10px;
+}
+
+.summery-info .box .btn-grp .back-btn {
+    width: 134px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    color: black;
+}
+
+.summery-info .box .btn-grp .next-btn {
+    width: 134px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    background: black;
+    color: white;
+}
+
+.summery-info .box .ok-btn {
+    width: 134px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    background: black;
+    color: white;
+}

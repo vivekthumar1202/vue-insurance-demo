@@ -1,6 +1,6 @@
 <template>
   <form>
-    <div class="info">
+    <div class="calculate-info">
       <h1>Tell us about yourself {{ form }}</h1>
       <div class="form-control">
         <label>Name</label>
@@ -57,7 +57,10 @@
               @change="calculatePremium()"
               v-model="data.insuranceType"
             />
-            <span>Safe (50%)</span>
+            <span
+              >Safe (+{{ data.packagesPremiumSafe }}
+              {{ data.country.currency }} 50%)</span
+            >
           </div>
           <div class="radio-btn">
             <input
@@ -67,7 +70,10 @@
               @change="calculatePremium()"
               v-model="data.insuranceType"
             />
-            <span>Super Safe(75%)</span>
+            <span
+              >Super Safe(+{{ data.packagesPremiumSuper }}
+              {{ data.country.currency }} 75%)</span
+            >
           </div>
         </div>
 
@@ -86,12 +92,13 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-@Options({})
-export default class CalculateInsurance extends Vue {
+import { Options, mixins } from "vue-class-component";
+import CalculateMixin from "@/mixins/Calculate";
+
+export default class CalculateInsurance extends mixins(CalculateMixin) {
   finalPremiun = 0;
   isFormSubmitted = false;
-  private countries: Array<object> = [
+  public countries: Array<object> = [
     {
       name: "Hong Kong",
       rate: 1,
@@ -118,6 +125,8 @@ export default class CalculateInsurance extends Vue {
       currency: "HKD",
     },
     finalPremiun: 0,
+    packagesPremiumSafe: 0,
+    packagesPremiumSuper: 0,
   };
 
   public mounted() {
@@ -128,40 +137,7 @@ export default class CalculateInsurance extends Vue {
   }
 
   public calculatePremium() {
-    this.isFormSubmitted = false;
-    if (this.data.age) {
-      switch (this.data.insuranceType) {
-        case "standard":
-          this.data.finalPremiun = 10 * this.data.age * this.data.country.rate;
-          break;
-        case "safe":
-          this.data.finalPremiun =
-            Number(
-              (
-                (10 * this.data.age * this.data.country.rate * 50) /
-                100
-              ).toFixed(2)
-            ) +
-            10 * this.data.age * this.data.country.rate;
-
-          break;
-        case "super":
-          this.data.finalPremiun =
-            Number(
-              (
-                (10 * this.data.age * this.data.country.rate * 75) /
-                100
-              ).toFixed(2)
-            ) +
-            10 * this.data.age * this.data.country.rate;
-
-          break;
-        default:
-          break;
-      }
-    } else {
-      this.data.finalPremiun = 0;
-    }
+    this.data = this.calculateAmount(this.data);
   }
 
   backPage() {
@@ -180,82 +156,5 @@ export default class CalculateInsurance extends Vue {
 </script>
 
 <style scoped lang="scss">
-.info {
-  .title {
-    font-size: 26px;
-    font-weight: bold;
-  }
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  .form-control {
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-    margin-top: 20px;
-    align-items: flex-start;
-    label {
-      font-size: 14px;
-    }
-
-    input {
-      height: 30px;
-      width: 186px;
-    }
-
-    select {
-      width: 196px;
-      height: 36px;
-    }
-  }
-  .box {
-    margin-top: 30px;
-    background-color: #8080801a;
-    width: 560px;
-    display: flex;
-    height: max-content;
-    padding: 30px 0px;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    gap: 20px;
-
-    .radio-grp {
-      display: flex;
-      gap: 20px;
-      flex-flow: column;
-      .radio-btn {
-        display: flex;
-        gap: 4px;
-      }
-    }
-
-    .btn-grp {
-      display: flex;
-      gap: 10px;
-      .back-btn {
-        width: 134px;
-        height: 36px;
-        border-radius: 4px;
-        font-size: 16px;
-        outline: none;
-        background: white;
-        color: black;
-      }
-      .next-btn {
-        width: 134px;
-        height: 36px;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        outline: none;
-        background: black;
-        color: white;
-      }
-    }
-  }
-  .error {
-    border: 1px solid red;
-  }
-}
+@import "./CalculateInsurance.css";
 </style>

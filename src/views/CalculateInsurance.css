@@ -1,0 +1,87 @@
+.calculate-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;    
+}
+
+.calculate-info .title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.calculate-info .form-control {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+.calculate-info .form-control label {
+    font-size: 14px;
+}
+
+.calculate-info .form-control input {
+    height: 30px;
+    width: 186px;
+}
+
+.calculate-info .form-control select {
+    width: 196px;
+    height: 36px;
+}
+
+.calculate-info .box {
+    margin-top: 30px;
+    background-color: #8080801a;
+    width: 560px;
+    display: flex;
+    height: max-content;
+    padding: 30px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 20px;
+}
+
+
+.calculate-info .box .radio-grp {
+    display: flex;
+    gap: 20px;
+    flex-flow: column;
+}
+
+.calculate-info .box .radio-grp .radio-btn {
+    display: flex;
+    gap: 4px;
+  }
+
+.calculate-info .box .btn-grp {
+    display: flex;
+    gap: 10px;    
+}
+
+.calculate-info .box .btn-grp .back-btn {
+    width: 134px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    color: black;
+}
+
+.calculate-info .box .btn-grp .next-btn {
+    width: 134px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    background: black;
+    color: white;
+}
+
+.calculate-info .error {
+    border: 1px solid red;
+}
